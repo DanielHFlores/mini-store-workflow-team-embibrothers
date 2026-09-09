@@ -8,6 +8,8 @@ def shipping_cost(subtotal):
 
 
 def apply_discount(subtotal, percent):
+    if (percent<0 or percent>100):
+        raise ValueError("percent must be >= 0 and <= 100")
     if subtotal < 0:
         raise ValueError("subtotal must be >= 0")
     return round(subtotal * (1 - percent / 100), 2)

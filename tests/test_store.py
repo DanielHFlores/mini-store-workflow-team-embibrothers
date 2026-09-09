@@ -20,6 +20,12 @@ class StoreTests(unittest.TestCase):
     def test_loyalty_starts_at_zero(self):
         self.assertEqual(loyalty_discount(0), 0)
 
+    def test_apply_discount_percent_invalid(self):
+        with self.assertRaises(ValueError):
+            apply_discount(1000, 200)
+        with self.assertRaises(ValueError):
+            apply_discount(1000, -100)
+
 
 if __name__ == "__main__":
     unittest.main()
