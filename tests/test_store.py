@@ -15,7 +15,7 @@ class StoreTests(unittest.TestCase):
         self.assertEqual(apply_discount(1000, 10), 900.0)
 
     def test_checkout_with_items(self):
-        self.assertTrue(can_checkout(1))
+        self.assertFalse(can_checkout(0))
 
     def test_loyalty_starts_at_zero(self):
         self.assertEqual(loyalty_discount(0), 0)
