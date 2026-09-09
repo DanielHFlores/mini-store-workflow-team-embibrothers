@@ -4,6 +4,8 @@
 def shipping_cost(subtotal):
     if subtotal < 0:
         raise ValueError("subtotal must be >= 0")
+    if subtotal >= 1000:
+        return 0.00
     return 99.0
 
 
