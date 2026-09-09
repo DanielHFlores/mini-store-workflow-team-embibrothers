@@ -23,6 +23,7 @@ class StoreTests(unittest.TestCase):
     def test_free_shipping_over_threshold(self):
         self.assertEqual(shipping_cost(1000), 0.00)
         self.assertEqual(shipping_cost(1500), 0.00)
+        self.assertEqual(shipping_cost(1000.01), 0.00)
 
 
 if __name__ == "__main__":
