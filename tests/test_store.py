@@ -30,6 +30,12 @@ class StoreTests(unittest.TestCase):
         self.assertEqual(shipping_cost(1500), 0.00)
         self.assertEqual(shipping_cost(1000.01), 0.00)
 
+    def test_apply_discount_percent_invalid(self):
+        with self.assertRaises(ValueError):
+            apply_discount(1000, 200)
+        with self.assertRaises(ValueError):
+            apply_discount(1000, -100)
+
 
 if __name__ == "__main__":
     unittest.main()
