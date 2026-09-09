@@ -20,6 +20,10 @@ class StoreTests(unittest.TestCase):
     def test_loyalty_starts_at_zero(self):
         self.assertEqual(loyalty_discount(0), 0)
 
+    def test_free_shipping_over_threshold(self):
+        self.assertEqual(shipping_cost(1000), 0.00)
+        self.assertEqual(shipping_cost(1500), 0.00)
+
 
 if __name__ == "__main__":
     unittest.main()
