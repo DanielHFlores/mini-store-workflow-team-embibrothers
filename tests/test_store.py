@@ -19,6 +19,11 @@ class StoreTests(unittest.TestCase):
 
     def test_loyalty_starts_at_zero(self):
         self.assertEqual(loyalty_discount(0), 0)
+    def test_loyalty_discount_tiers(self):
+        self.assertEqual(loyalty_discount(499), 0)
+        self.assertEqual(loyalty_discount(500), 5)
+        self.assertEqual(loyalty_discount(999), 5)
+        self.assertEqual(loyalty_discount(1000), 10)
 
 
 if __name__ == "__main__":
